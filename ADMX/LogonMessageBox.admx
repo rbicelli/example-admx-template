@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) Riccardo Bicelli <r.bicelli@gmail.com>. All rights reserved.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+ <policyNamespaces>
+    <target prefix="MyCompLogonMessageBox" namespace="MyCompany.LogonMessageBox" />
+    <using prefix="mycompany" namespace="MyCompany.Policies.Common" />
+	<using prefix="windows" namespace="Microsoft.Policies.Windows" />
+ </policyNamespaces>
+ <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="CtMyCompLogonMessageBox" displayName="$(string.CtMyCompLogonMessageBox)">
+	<parentCategory ref="mycompany:CtMyCompany" />
+	</category>
+  </categories>
+  <policies>
+   
+   <policy name="LogonMessageBoxEnable" class="User" displayName="$(string.LogonMessageBoxEnable)" explainText="$(string.LogonMessageBoxEnable_Help)" key="Software\Policies\MyCompany\LogonMessage" valueName="MessageEnable">
+    <parentCategory ref="CtMyCompLogonMessageBox" />
+    <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+	<enabledValue>
+        <decimal value="1" />
+    </enabledValue>
+    <disabledValue>
+    <delete />
+    </disabledValue>
+   </policy>
+
+   <policy name="LogonMessageBoxTitle" class="User" displayName="$(string.LogonMessageBoxTitle)" explainText="$(string.LogonMessageBoxTitle_Help)" presentation="$(presentation.LogonMessageBoxTitle)" key="Software\Policies\MyCompany\LogonMessage">
+    <parentCategory ref="CtMyCompLogonMessageBox" />
+     <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+     <elements>
+        <text id="LogonMessageBoxTitle" valueName="MessageTitle" required="true" />
+     </elements>
+   </policy>
+   
+    <policy name="LogonMessageBoxPrompt" class="User" displayName="$(string.LogonMessageBoxPrompt)" explainText="$(string.LogonMessageBoxPrompt_Help)" presentation="$(presentation.LogonMessageBoxPrompt)" key="Software\Policies\MyCompany\LogonMessage">
+    <parentCategory ref="CtMyCompLogonMessageBox" />
+     <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+     <elements>
+        <text id="LogonMessageBoxPrompt" valueName="MessagePrompt" required="true" />
+     </elements>
+   </policy>
+
+   <policy name="LogonMessageBoxButtons" class="User" displayName="$(string.LogonMessageBoxButtons)" explainText="$(string.LogonMessageBoxButtons_Help)" presentation="$(presentation.LogonMessageBoxButtons)" key="Software\Policies\MyCompany\LogonMessage">
+      <parentCategory ref="CtMyCompLogonMessageBox" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="LogonMessageBoxButtons" valueName="MessageButtons">
+          <item displayName="$(string.MessageButtons_OKOnly)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.MessageButtons_OKCancel)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.MessageButtons_AbortRetryIgnore)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.MessageButtons_YesNoCancel)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+		  <item displayName="$(string.MessageButtons_YesNo)">
+            <value>
+              <decimal value="4" />
+            </value>
+          </item>
+		  <item displayName="$(string.MessageButtons_RetryCancel)">
+            <value>
+              <decimal value="5" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	
+	 <policy name="LogonMessageBoxIcon" class="User" displayName="$(string.LogonMessageBoxIcon)" explainText="$(string.LogonMessageBoxIcon_Help)" presentation="$(presentation.LogonMessageBoxIcon)" key="Software\Policies\MyCompany\LogonMessage">
+      <parentCategory ref="CtMyCompLogonMessageBox" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="LogonMessageBoxIcon" valueName="MessageIcon">
+          <item displayName="$(string.MessageIcon_Critical)">
+            <value>
+              <decimal value="16" />
+            </value>
+          </item>
+          <item displayName="$(string.MessageIcon_Question)">
+            <value>
+              <decimal value="32" />
+            </value>
+          </item>
+          <item displayName="$(string.MessageIcon_Exclamation)">
+            <value>
+              <decimal value="48" />
+            </value>
+          </item>
+          <item displayName="$(string.MessageIcon_Information)">
+            <value>
+              <decimal value="64" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	
+  </policies>
+</policyDefinitions>
