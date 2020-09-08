@@ -1,9 +1,11 @@
 ' LogonMessage.vbs
 ' by Riccardo Bicelli <r.bicelli@gmail.com>
+' This program is a proof of concept script for demonstrating how to write ADMX Templates
 
 ' Registry Base
 Const REG_BASE = "HKEY_CURRENT_USER\Software\Policies\MyCompany\LogonMessage"
 
+' Used variables
 Dim MsgBoxEnabled
 Dim MsgBoxButtons
 Dim MsgBoxIcons
@@ -30,9 +32,9 @@ If MsgBoxEnabled=1 Then
 End If
 
 
-' Used Functions
+' Functions Library
 ' ReadFromReg Function
-' Reads a Registry Key
+' Reads a Registry Key from REG_BASE
 function readFromReg (sRegKey, sDefaultValue )
     Dim WSHShell, value
 
