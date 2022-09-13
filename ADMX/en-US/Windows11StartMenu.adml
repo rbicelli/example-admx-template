@@ -31,13 +31,11 @@ It is sufficient to enter the Full Path of the vbs file in Logon
 	<string id="MessageButtons_YesNo">Yes, No</string>
 	<string id="MessageButtons_RetryCancel">Retry, Cancel</string>
 	
-	<string id="Windows11StartMenuIcon">Message Box Icon</string>
-	<string id="Windows11StartMenuIcon_Help">Specify Message box icon for the message box</string>
+	<string id="Windows11StartMenuAlignment">Taskbar Alignment</string>
+	<string id="Windows11StartMenuAlignment_Help">Specify the taskbar alignment left or center</string>
 
-	<string id="MessageIcon_Critical">Critical</string>
-	<string id="MessageIcon_Question">Question</string>
-	<string id="MessageIcon_Exclamation">Exclamation</string>
-	<string id="MessageIcon_Information">Information</string>
+	<string id="TaskbarAl_Left">Left</string>
+	<string id="TaskbarAl_Center">Center</string>
 	
 	</stringTable>
 
@@ -58,8 +56,8 @@ It is sufficient to enter the Full Path of the vbs file in Logon
         <dropdownList refId="Windows11StartMenuButtons" noSort="true">Buttons</dropdownList>
     </presentation>
 	
-	<presentation id="Windows11StartMenuIcon">
-        <dropdownList refId="Windows11StartMenuIcon" noSort="true">Icon</dropdownList>
+	<presentation id="Windows11StartMenuAlignment">
+        <dropdownList refId="Windows11StartMenuAlignment" noSort="true">Alignment</dropdownList>
     </presentation>
    
    </presentationTable>

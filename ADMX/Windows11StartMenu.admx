@@ -16,7 +16,7 @@
    
    <policy name="Windows11StartMenuEnable" class="User" displayName="$(string.Windows11StartMenuEnable)" explainText="$(string.Windows11StartMenuEnable_Help)" key="Software\Policies\RseTelecom\LogonMessage" valueName="MessageEnable">
     <parentCategory ref="CtRSEWindows11StartMenu" />
-    <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+    <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER" />
 	<enabledValue>
         <decimal value="1" />
     </enabledValue>
@@ -27,7 +27,7 @@
 
    <policy name="Windows11StartMenuTitle" class="User" displayName="$(string.Windows11StartMenuTitle)" explainText="$(string.Windows11StartMenuTitle_Help)" presentation="$(presentation.Windows11StartMenuTitle)" key="Software\Policies\RseTelecom\LogonMessage">
     <parentCategory ref="CtRSEWindows11StartMenu" />
-     <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+     <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER" />
      <elements>
         <text id="Windows11StartMenuTitle" valueName="MessageTitle" required="true" />
      </elements>
@@ -35,7 +35,7 @@
    
     <policy name="Windows11StartMenuPrompt" class="User" displayName="$(string.Windows11StartMenuPrompt)" explainText="$(string.Windows11StartMenuPrompt_Help)" presentation="$(presentation.Windows11StartMenuPrompt)" key="Software\Policies\RseTelecom\LogonMessage">
     <parentCategory ref="CtRSEWindows11StartMenu" />
-     <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+     <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER" />
      <elements>
         <text id="Windows11StartMenuPrompt" valueName="MessagePrompt" required="true" />
      </elements>
@@ -43,7 +43,7 @@
 
    <policy name="Windows11StartMenuButtons" class="User" displayName="$(string.Windows11StartMenuButtons)" explainText="$(string.Windows11StartMenuButtons_Help)" presentation="$(presentation.Windows11StartMenuButtons)" key="Software\Policies\RseTelecom\LogonMessage">
       <parentCategory ref="CtRSEWindows11StartMenu" />
-      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER" />
       <elements>
         <enum id="Windows11StartMenuButtons" valueName="MessageButtons">
           <item displayName="$(string.MessageButtons_OKOnly)">
@@ -80,29 +80,19 @@
       </elements>
     </policy>
 	
-	 <policy name="Windows11StartMenuIcon" class="User" displayName="$(string.Windows11StartMenuIcon)" explainText="$(string.Windows11StartMenuIcon_Help)" presentation="$(presentation.Windows11StartMenuIcon)" key="Software\Policies\RseTelecom\LogonMessage">
+	 <policy name="Windows11StartMenuAlignment" class="User" displayName="$(string.Windows11StartMenuAlignment)" explainText="$(string.Windows11StartMenuAlignment_Help)" presentation="$(presentation.Windows11StartMenuAlignment)" key="Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced">
       <parentCategory ref="CtRSEWindows11StartMenu" />
-      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER" />
       <elements>
-        <enum id="Windows11StartMenuIcon" valueName="MessageIcon">
-          <item displayName="$(string.MessageIcon_Critical)">
+        <enum id="Windows11StartMenuAlignment" valueName="TaskbarAl">
+          <item displayName="$(string.TaskbarAl_Left)">
             <value>
-              <decimal value="16" />
+              <decimal value="0" />
             </value>
           </item>
-          <item displayName="$(string.MessageIcon_Question)">
+          <item displayName="$(string.TaskbarAl_Center)">
             <value>
-              <decimal value="32" />
-            </value>
-          </item>
-          <item displayName="$(string.MessageIcon_Exclamation)">
-            <value>
-              <decimal value="48" />
-            </value>
-          </item>
-          <item displayName="$(string.MessageIcon_Information)">
-            <value>
-              <decimal value="64" />
+              <decimal value="1" />
             </value>
           </item>
         </enum>
