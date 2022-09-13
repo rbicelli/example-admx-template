@@ -5,7 +5,7 @@
   </description>
   <resources>
     <stringTable>
-      <string id="CtCategoryMyCompany">My Company</string>      
+      <string id="CtCategoryRseTelecom">RSE Telecom &amp; ICT</string>      
 	</stringTable>	    	
   </resources>
 </policyDefinitionResources>

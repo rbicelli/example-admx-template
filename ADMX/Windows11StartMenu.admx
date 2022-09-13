@@ -2,20 +2,20 @@
 <!--  Copyright (C) Riccardo Bicelli <r.bicelli@gmail.com>. All rights reserved.  -->
 <policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
  <policyNamespaces>
-    <target prefix="MyCompLogonMessageBox" namespace="MyCompany.LogonMessageBox" />
-    <using prefix="mycompany" namespace="MyCompany.Policies.Common" />
+    <target prefix="RSEWindows11StartMenu" namespace="RseTelecom.Windows11StartMenu" />
+    <using prefix="mycompany" namespace="RseTelecom.Policies.Common" />
 	<using prefix="windows" namespace="Microsoft.Policies.Windows" />
  </policyNamespaces>
  <resources minRequiredRevision="1.0" />
   <categories>
-    <category name="CtMyCompLogonMessageBox" displayName="$(string.CtMyCompLogonMessageBox)">
-	<parentCategory ref="mycompany:CtMyCompany" />
+    <category name="CtRSEWindows11StartMenu" displayName="$(string.CtRSEWindows11StartMenu)">
+	<parentCategory ref="mycompany:CtRseTelecom" />
 	</category>
   </categories>
   <policies>
    
-   <policy name="LogonMessageBoxEnable" class="User" displayName="$(string.LogonMessageBoxEnable)" explainText="$(string.LogonMessageBoxEnable_Help)" key="Software\Policies\MyCompany\LogonMessage" valueName="MessageEnable">
-    <parentCategory ref="CtMyCompLogonMessageBox" />
+   <policy name="Windows11StartMenuEnable" class="User" displayName="$(string.Windows11StartMenuEnable)" explainText="$(string.Windows11StartMenuEnable_Help)" key="Software\Policies\RseTelecom\LogonMessage" valueName="MessageEnable">
+    <parentCategory ref="CtRSEWindows11StartMenu" />
     <supportedOn ref="windows:SUPPORTED_WindowsVista" />
 	<enabledValue>
         <decimal value="1" />
@@ -25,27 +25,27 @@
     </disabledValue>
    </policy>
 
-   <policy name="LogonMessageBoxTitle" class="User" displayName="$(string.LogonMessageBoxTitle)" explainText="$(string.LogonMessageBoxTitle_Help)" presentation="$(presentation.LogonMessageBoxTitle)" key="Software\Policies\MyCompany\LogonMessage">
-    <parentCategory ref="CtMyCompLogonMessageBox" />
+   <policy name="Windows11StartMenuTitle" class="User" displayName="$(string.Windows11StartMenuTitle)" explainText="$(string.Windows11StartMenuTitle_Help)" presentation="$(presentation.Windows11StartMenuTitle)" key="Software\Policies\RseTelecom\LogonMessage">
+    <parentCategory ref="CtRSEWindows11StartMenu" />
      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
      <elements>
-        <text id="LogonMessageBoxTitle" valueName="MessageTitle" required="true" />
+        <text id="Windows11StartMenuTitle" valueName="MessageTitle" required="true" />
      </elements>
    </policy>
    
-    <policy name="LogonMessageBoxPrompt" class="User" displayName="$(string.LogonMessageBoxPrompt)" explainText="$(string.LogonMessageBoxPrompt_Help)" presentation="$(presentation.LogonMessageBoxPrompt)" key="Software\Policies\MyCompany\LogonMessage">
-    <parentCategory ref="CtMyCompLogonMessageBox" />
+    <policy name="Windows11StartMenuPrompt" class="User" displayName="$(string.Windows11StartMenuPrompt)" explainText="$(string.Windows11StartMenuPrompt_Help)" presentation="$(presentation.Windows11StartMenuPrompt)" key="Software\Policies\RseTelecom\LogonMessage">
+    <parentCategory ref="CtRSEWindows11StartMenu" />
      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
      <elements>
-        <text id="LogonMessageBoxPrompt" valueName="MessagePrompt" required="true" />
+        <text id="Windows11StartMenuPrompt" valueName="MessagePrompt" required="true" />
      </elements>
    </policy>
 
-   <policy name="LogonMessageBoxButtons" class="User" displayName="$(string.LogonMessageBoxButtons)" explainText="$(string.LogonMessageBoxButtons_Help)" presentation="$(presentation.LogonMessageBoxButtons)" key="Software\Policies\MyCompany\LogonMessage">
-      <parentCategory ref="CtMyCompLogonMessageBox" />
+   <policy name="Windows11StartMenuButtons" class="User" displayName="$(string.Windows11StartMenuButtons)" explainText="$(string.Windows11StartMenuButtons_Help)" presentation="$(presentation.Windows11StartMenuButtons)" key="Software\Policies\RseTelecom\LogonMessage">
+      <parentCategory ref="CtRSEWindows11StartMenu" />
       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
       <elements>
-        <enum id="LogonMessageBoxButtons" valueName="MessageButtons">
+        <enum id="Windows11StartMenuButtons" valueName="MessageButtons">
           <item displayName="$(string.MessageButtons_OKOnly)">
             <value>
               <decimal value="0" />
@@ -80,11 +80,11 @@
       </elements>
     </policy>
 	
-	 <policy name="LogonMessageBoxIcon" class="User" displayName="$(string.LogonMessageBoxIcon)" explainText="$(string.LogonMessageBoxIcon_Help)" presentation="$(presentation.LogonMessageBoxIcon)" key="Software\Policies\MyCompany\LogonMessage">
-      <parentCategory ref="CtMyCompLogonMessageBox" />
+	 <policy name="Windows11StartMenuIcon" class="User" displayName="$(string.Windows11StartMenuIcon)" explainText="$(string.Windows11StartMenuIcon_Help)" presentation="$(presentation.Windows11StartMenuIcon)" key="Software\Policies\RseTelecom\LogonMessage">
+      <parentCategory ref="CtRSEWindows11StartMenu" />
       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
       <elements>
-        <enum id="LogonMessageBoxIcon" valueName="MessageIcon">
+        <enum id="Windows11StartMenuIcon" valueName="MessageIcon">
           <item displayName="$(string.MessageIcon_Critical)">
             <value>
               <decimal value="16" />
