@@ -1,6 +1,5 @@
-# example-admx-template
+# Windows 11 Start Menu
 
-This is an ADMX template writing tutorial with a POC script.
-
-Please look at https://4sysops.com/archives/how-to-create-an-admx-template/ which contains the full article.
+This is an ADMX template for customizing the Windows 11 Start Menu
+It is still work in progress so come back later :)
 
