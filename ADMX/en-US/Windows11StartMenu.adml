@@ -6,30 +6,26 @@
   <resources>
     <stringTable>
       <string id="CtRSEWindows11StartMenu">Windows 11 Start Menu</string>
-      
-	  <string id="Windows11StartMenuEnable">Enable Logon Message Box</string>
-      <string id="Windows11StartMenuEnable_Help">This policy settings allows you to manage the Logon Message.
-If you enable this setting the automatic display of Custom Logon Message will be enabled.
-
-Note: In order for this policy to work you still have set the Logon Scripts in User Configuration/Windows/Settings/Script (Logon/Logoff),
-It is sufficient to enter the Full Path of the vbs file in Logon
-	</string>
-
-    <string id="Windows11StartMenuTitle">Logon Message Box Title</string>
-    <string id="Windows11StartMenuTitle_Help">Specify a logon message box title</string>
 	
-	<string id="Windows11StartMenuPrompt">Logon Message Box Prompt</string>
-    <string id="Windows11StartMenuPrompt_Help">Specify a logon message box body text</string>
-	
-	<string id="Windows11StartMenuButtons">Message Box Buttons</string>
-	<string id="Windows11StartMenuButtons_Help">Specify Message box buttons combination for the message box</string>
+  <string id="Windows11StartMenuPinnedApps">Pinned Apps Start Menu</string>
+	<string id="Windows11StartMenuPinnedApps_Help">
+  Export an existing Start layout
 
-	<string id="MessageButtons_OKOnly">OK</string>
-	<string id="MessageButtons_OKCancel">OK, Cancel</string>
-	<string id="MessageButtons_AbortRetryIgnore">Abort, Retry, Ignore</string>
-	<string id="MessageButtons_YesNoCancel">Yes, No, Cancel</string>
-	<string id="MessageButtons_YesNo">Yes, No</string>
-	<string id="MessageButtons_RetryCancel">Retry, Cancel</string>
+  1. Create a folder to save the .json file. For example, create the C:\Layouts folder.
+  2. On a Windows 11 device, open the Windows PowerShell app.
+  3. Run the following cmdlet. Name the file LayoutModification.json.
+  
+  Export-StartLayout -Path "C:\Layouts\LayoutModification.json"
+
+  For more information see: https://docs.microsoft.com/en-us/windows/configuration/customize-start-menu-layout-windows-11#get-the-pinnedlist-json
+
+  Also enable the "Pinned Apps Start Enabled" setting
+  </string>
+
+  <string id="Windows11StartMenuPinnedAppsEnable">Pinned Apps Start Enabled</string>
+	<string id="Windows11StartMenuPinnedAppsEnable_Help">
+  
+  </string>
 	
 	<string id="Windows11StartMenuAlignment">Taskbar Alignment</string>
 	<string id="Windows11StartMenuAlignment_Help">Specify the taskbar alignment left or center</string>
@@ -39,26 +35,19 @@ It is sufficient to enter the Full Path of the vbs file in Logon
 	
 	</stringTable>
 
-   <presentationTable>     
-      <presentation id="Windows11StartMenuTitle">
-        <textBox refId="Windows11StartMenuTitle">
-          <label>Message Box Title:</label>
+   <presentationTable>
+
+	   <presentation id="Windows11StartMenuPinnedApps">
+        <textBox refId="Windows11StartMenuPinnedApps">
+          <label>Pinned apps list:</label>
         </textBox>
 	   </presentation>
 
-	   <presentation id="Windows11StartMenuPrompt">
-        <textBox refId="Windows11StartMenuPrompt">
-          <label>Message Box Prompt:</label>
-        </textBox>
-	   </presentation>
-    
-	<presentation id="Windows11StartMenuButtons">
-        <dropdownList refId="Windows11StartMenuButtons" noSort="true">Buttons</dropdownList>
-    </presentation>
+     <presentation id="Windows11StartMenuPinnedAppsEnable"/>
 	
 	<presentation id="Windows11StartMenuAlignment">
         <dropdownList refId="Windows11StartMenuAlignment" noSort="true">Alignment</dropdownList>
-    </presentation>
+  </presentation>
    
    </presentationTable>
 	

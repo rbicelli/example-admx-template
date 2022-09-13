@@ -13,71 +13,24 @@
 	</category>
   </categories>
   <policies>
-   
-   <policy name="Windows11StartMenuEnable" class="User" displayName="$(string.Windows11StartMenuEnable)" explainText="$(string.Windows11StartMenuEnable_Help)" key="Software\Policies\RseTelecom\LogonMessage" valueName="MessageEnable">
-    <parentCategory ref="CtRSEWindows11StartMenu" />
-    <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER" />
-	<enabledValue>
-        <decimal value="1" />
-    </enabledValue>
-    <disabledValue>
-    <delete />
-    </disabledValue>
-   </policy>
 
-   <policy name="Windows11StartMenuTitle" class="User" displayName="$(string.Windows11StartMenuTitle)" explainText="$(string.Windows11StartMenuTitle_Help)" presentation="$(presentation.Windows11StartMenuTitle)" key="Software\Policies\RseTelecom\LogonMessage">
-    <parentCategory ref="CtRSEWindows11StartMenu" />
-     <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER" />
-     <elements>
-        <text id="Windows11StartMenuTitle" valueName="MessageTitle" required="true" />
-     </elements>
-   </policy>
-   
-    <policy name="Windows11StartMenuPrompt" class="User" displayName="$(string.Windows11StartMenuPrompt)" explainText="$(string.Windows11StartMenuPrompt_Help)" presentation="$(presentation.Windows11StartMenuPrompt)" key="Software\Policies\RseTelecom\LogonMessage">
-    <parentCategory ref="CtRSEWindows11StartMenu" />
-     <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER" />
-     <elements>
-        <text id="Windows11StartMenuPrompt" valueName="MessagePrompt" required="true" />
-     </elements>
-   </policy>
-
-   <policy name="Windows11StartMenuButtons" class="User" displayName="$(string.Windows11StartMenuButtons)" explainText="$(string.Windows11StartMenuButtons_Help)" presentation="$(presentation.Windows11StartMenuButtons)" key="Software\Policies\RseTelecom\LogonMessage">
-      <parentCategory ref="CtRSEWindows11StartMenu" />
-      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER" />
+   <policy name="Windows11StartMenuPinnedApps" class="Machine" displayName="$(string.Windows11StartMenuPinnedApps)" explainText="$(string.Windows11StartMenuPinnedApps_Help)" key="Software\Microsoft\PolicyManager\current\device\Start" presentation="$(presentation.Windows11StartMenuPinnedApps)">
+      <parentCategory ref="CtRSEWindows11StartMenu"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER"/>
       <elements>
-        <enum id="Windows11StartMenuButtons" valueName="MessageButtons">
-          <item displayName="$(string.MessageButtons_OKOnly)">
-            <value>
-              <decimal value="0" />
-            </value>
-          </item>
-          <item displayName="$(string.MessageButtons_OKCancel)">
-            <value>
-              <decimal value="1" />
-            </value>
-          </item>
-          <item displayName="$(string.MessageButtons_AbortRetryIgnore)">
-            <value>
-              <decimal value="2" />
-            </value>
-          </item>
-          <item displayName="$(string.MessageButtons_YesNoCancel)">
-            <value>
-              <decimal value="3" />
-            </value>
-          </item>
-		  <item displayName="$(string.MessageButtons_YesNo)">
-            <value>
-              <decimal value="4" />
-            </value>
-          </item>
-		  <item displayName="$(string.MessageButtons_RetryCancel)">
-            <value>
-              <decimal value="5" />
-            </value>
-          </item>
-        </enum>
+        <text id="Windows11StartMenuPinnedApps" valueName="ConfigureStartPins" required="true"/>
       </elements>
+    </policy>
+
+    <policy name="Windows11StartMenuPinnedAppsEnable" class="Machine" displayName="$(string.Windows11StartMenuPinnedAppsEnable)" explainText="$(string.Windows11StartMenuPinnedAppsEnable_Help)" key="Software\Microsoft\PolicyManager\current\device\Start"  presentation="$(presentation.Windows11StartMenuPinnedAppsEnable)" valueName="ConfigureStartPins_ProviderSet">
+      <parentCategory ref="CtRSEWindows11StartMenu"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_11_0_NOSERVER"/>
+      <enabledValue>
+        <decimal value="0"/>
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1"/>
+      </disabledValue>
     </policy>
 	
 	 <policy name="Windows11StartMenuAlignment" class="User" displayName="$(string.Windows11StartMenuAlignment)" explainText="$(string.Windows11StartMenuAlignment_Help)" presentation="$(presentation.Windows11StartMenuAlignment)" key="Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced">
